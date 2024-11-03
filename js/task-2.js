@@ -25,20 +25,17 @@ const images = [
   }
 ];
 
-const createGallery = (images) => {
-  const gallery = document.querySelector('.gallery');
+const photoGallery = document.querySelector(".gallery");
 
-  const galleryItems = images.map(image => {
-    const li = document.createElement('li');
-    const img = document.createElement('img');
-    img.src = image.url;
-    img.alt = image.alt;
-
-    li.appendChild(img);
-    return li;
-  });
-
-  gallery.append(...galleryItems);
+const creatMarkup = (arr) => {
+  return arr
+    .map((item)) =>
+     '<li class="gallery-item">
+     <img src = "${item.url}" alt = "${item.alt}" width = "360">
+     </li>'
+     )
+     .join("");
 };
 
-createGallery(images);
+console.log(creatMarkup(images));
+photoGallery.insertAdjacentHTML("beforeend", creatMarkup(images));
