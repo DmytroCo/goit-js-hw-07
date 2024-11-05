@@ -29,12 +29,12 @@ const photoGallery = document.querySelector(".gallery");
 
 const creatMarkup = (arr) => {
   return arr
-    .map((item)) =>
-     '<li class="gallery-item">
-     <img src = "${item.url}" alt = "${item.alt}" width = "360">
-     </li>'
-     )
-     .join("");
+    .map((item) =>
+      `<li class="gallery-item">
+        <img src="${item.url}" alt="${item.alt}" width="360">
+      </li>`
+    )
+    .join("");
 };
 
 console.log(creatMarkup(images));
